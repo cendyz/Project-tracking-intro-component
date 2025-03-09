@@ -1,0 +1,33 @@
+{
+	"name": "frontend-mentor-project",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc -b && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@splidejs/vue-splide": "^0.6.12",
+		"axios": "^1.7.9",
+		"nanoid": "^5.0.9",
+		"oh-vue-icons": "^1.0.0-rc3",
+		"vue": "^3.5.13",
+		"vue-router": "^4.5.0"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.7",
+		"@vitejs/plugin-vue": "^5.2.1",
+		"@vue/tsconfig": "^0.7.0",
+		"autoprefixer": "^10.4.20",
+		"daisyui": "^4.12.23",
+		"postcss": "^8.5.1",
+		"sass-embedded": "^1.83.4",
+		"tailwindcss": "^3.4.17",
+		"typescript": "~5.6.2",
+		"vite": "^6.0.5",
+		"vite-plugin-vue-devtools": "^7.7.1",
+		"vue-tsc": "^2.2.0"
+	}
+}
