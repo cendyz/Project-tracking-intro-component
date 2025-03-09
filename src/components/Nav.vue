@@ -1,13 +1,13 @@
 <template>
 	<nav class="container py-[5rem] px-[3.5rem] flex justify-between items-center">
-		<img :src="logo" alt="square with breaks" class="block w-[9%]" />
+		<img :src="logo" alt="square with breaks" class="block w-[3rem]" />
 		<button type="button" @click="isOpen = !isOpen">
 			<img :src="isOpen ? close : burger" :alt="isOpen ? 'close menu' : 'open menu'" />
 		</button>
 		<Transition mode="out-in">
 			<div
 				v-show="isOpen"
-				class="absolute left-[3.5rem] top-[18%] bg-white shad w-[calc(100%-7rem)] p-[2rem] flex flex-col text-center rounded-md transition-opacity">
+				class="absolute left-[3.5rem] top-[18%] bg-white shad w-[calc(100%-7rem)] p-[2rem] flex flex-col text-center rounded-md transition-opacity z-[100]">
 				<a
 					href="#"
 					v-for="(item, index) in links"

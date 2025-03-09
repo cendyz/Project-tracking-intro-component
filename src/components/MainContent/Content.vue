@@ -1,14 +1,19 @@
 <template>
-	<section>
-		<div>
-			<p>new</p>
-			<p>monogrpahs dashboard</p>
+	<section class="uppercase px-[3.5rem] py-[2rem] font-barloC">
+		<div class="flex gap-x-[2rem] items-center mb-[2rem]">
+			<p class="bg-black text-neutral-blue-400 font-w700 px-[1.3rem] rounded-badge py-[.2rem]">new</p>
+			<p class="tracking-[3px] text-neutral-blue-300">monogrpahs dashboard</p>
 		</div>
-		<h1>powerful insights into your team</h1>
-		<p></p>
-		<div>
-			<button>schedule a demo</button>
-			<p>to see a preview</p>
+		<h1 class="font-w700 text-[4rem] leading-[1] mb-[2rem]">powerful insights into your team</h1>
+		<p class="lowercase font-sans first-letter:uppercase text-[1.9rem] text-neutral-blue-200">
+			project planning and time tracking for agile teams
+		</p>
+		<div class="flex items-center mt-[3rem] justify-between">
+			<button
+				class="uppercase py-[1rem] px-[1.9rem] rounded-2xl bg-primary-red text-neutral-blue-400 font-w700 text-[1.5rem]">
+				schedule a demo
+			</button>
+			<p class="tracking-[2px] text-neutral-blue-300 pr-[1.7rem]">to see a preview</p>
 		</div>
 	</section>
 </template>
