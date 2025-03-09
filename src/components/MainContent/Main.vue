@@ -1,8 +1,8 @@
 <template>
 	<main>
 		<Images />
-		<Content />
-		<img src="" alt="" />
+		<!-- <Content /> -->
+		<div class="absolute bg-neutral-blue-400 w-full h-[50rem] top-[-5rem] z-[-1] left-1/2 rounded-[6rem]"></div>
 	</main>
 </template>
 
