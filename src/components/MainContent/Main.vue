@@ -1,8 +1,7 @@
 <template>
-	<main class="container relative overflow-x-clip">
+	<main class="grid justify-items-center relative lg:flex container">
 		<Images />
 		<Content />
-		<div class="absolute bg-neutral-blue-400 w-full h-[50rem] top-[-20rem] z-[-1] left-1/2 rounded-[6rem]"></div>
 	</main>
 </template>
 
