@@ -1,7 +1,7 @@
 <template>
 	<nav class="container py-[5rem] px-[3.5rem] flex justify-between items-center">
 		<img :src="logo" alt="square with breaks" class="block w-[3rem]" />
-		<button type="button" @click="isOpen = !isOpen">
+		<button type="button" @click="isOpen = !isOpen" aria-label="open close menu">
 			<img :src="isOpen ? close : burger" :alt="isOpen ? 'close menu' : 'open menu'" class="w-[3rem] lg:hidden" />
 		</button>
 		<Transition mode="out-in">
@@ -31,19 +31,18 @@ import { useWindowSize } from '@vueuse/core'
 const { width } = useWindowSize()
 const isOpen: Ref<boolean> = ref(false)
 const isLargeScreen = computed(() => width.value >= 1024)
+const links: Ref<string[]> = ref(['product', 'features', 'pricing', 'login'])
 
-// Resetowanie isOpen na false, gdy zmieniamy szerokość ekranu
 watchEffect(() => {
-	if (width.value < 1024) return // Jeśli ekran jest mały, nie robimy nic
-	isOpen.value = false // Na dużym ekranie zawsze resetujemy isOpen
+	if (isLargeScreen.value) {
+		isOpen.value = false
+	}
 })
 
 const isMenuVisible = computed(() => {
-	if (isLargeScreen.value) return true
+	if (width.value > 1024) return true
 	return isOpen.value
 })
-
-const links: Ref<string[]> = ref(['product', 'features', 'pricing', 'login'])
 </script>
 
 <style scoped>

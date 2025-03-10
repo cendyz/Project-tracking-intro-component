@@ -54,18 +54,17 @@ var core_1 = require("@vueuse/core");
 var width = (0, core_1.useWindowSize)().width;
 var isOpen = (0, vue_1.ref)(false);
 var isLargeScreen = (0, vue_1.computed)(function () { return width.value >= 1024; });
-// Resetowanie isOpen na false, gdy zmieniamy szerokość ekranu
+var links = (0, vue_1.ref)(['product', 'features', 'pricing', 'login']);
 (0, vue_1.watchEffect)(function () {
-    if (width.value < 1024)
-        return; // Jeśli ekran jest mały, nie robimy nic
-    isOpen.value = false; // Na dużym ekranie zawsze resetujemy isOpen
+    if (isLargeScreen.value) {
+        isOpen.value = false;
+    }
 });
 var isMenuVisible = (0, vue_1.computed)(function () {
-    if (isLargeScreen.value)
+    if (width.value > 1024)
         return true;
     return isOpen.value;
-});
-var links = (0, vue_1.ref)(['product', 'features', 'pricing', 'login']); /* PartiallyEnd: #3632/scriptSetup.vue */
+}); /* PartiallyEnd: #3632/scriptSetup.vue */
 function __VLS_template() {
     var __VLS_ctx = {};
     var __VLS_components;
@@ -82,7 +81,7 @@ function __VLS_template() {
             }
             var $event = _a[0];
             __VLS_ctx.isOpen = !__VLS_ctx.isOpen;
-        } }, { type: ("button") }));
+        } }, { type: ("button"), 'aria-label': ("open close menu") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.isOpen ? __VLS_ctx.close : __VLS_ctx.burger)), alt: ((__VLS_ctx.isOpen ? 'close menu' : 'open menu')) }, { class: ("w-[3rem] lg:hidden") }));
     var __VLS_0 = {}.Transition;
     /** @type { [typeof __VLS_components.Transition, typeof __VLS_components.Transition, ] } */ ;
@@ -127,8 +126,8 @@ var __VLS_self = (await Promise.resolve().then(function () { return __importStar
             burger: icon_hamburger_svg_1.default,
             close: icon_close_svg_1.default,
             isOpen: isOpen,
-            isMenuVisible: isMenuVisible,
             links: links,
+            isMenuVisible: isMenuVisible,
         };
     },
 });
